@@ -1,0 +1,16 @@
+<div style="padding: 20px; border: 1px solid black">
+  <button ng-click="send()">Send</button>
+  <button ng-click="save()">Save</button>
+  <br><br>
+  <div style="width:100%; border-bottom:1px solid black">
+    <input style="width:100%" ng-model="message.recipientEmail" placeholder="To"></input>
+  </div>
+  <br>
+  <div style="width:100%; border-bottom:1px solid black">
+    <input style="width:100%" ng-model="message.subject" placeholder="Subject"></input>
+  </div>
+  <br>
+  <div style="width:100%; height:400px;">
+    <textarea style="width:100%; height:100%" ng-model="message.body"></textarea>
+  </div>
+</div>

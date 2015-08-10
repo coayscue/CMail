@@ -1,0 +1,14 @@
+<div>
+  <div style="display:flex; width:100%; border-bottom: 3px solid black; justify-content: space-between;">
+    <h2>subject: {{subject}}</h2>
+    <h2 ng-show="!!peerName">with: {{peerName}}</h2>
+    <h2 ng-show="!peerName">with: {{peerEmail}}</h2>
+    <button ng-click="reply()" style="font-size:1.5em">Reply</button>
+  </div>
+  <div ng-repeat="message in conversationMessages" ng-style="message.senderEmail===user.email?{'background-color': '#ddd'}:{'background-color': '#fff'}" style="border-bottom: 1px solid black; padding:5px 5px;">
+    <h3 ng-show="!!message.senderName" style="display: inline-block">{{message.senderName}}</h3>
+    <h3 ng-show="!message.senderName" style="display: inline-block">{{message.senderEmail}}</h3>
+    <h4 style="display: inline-block; float: right">{{message.date | date:'short':offset}}</h4>
+    <p style="font-size:1.25em">{{message.body}}</p>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div id="box">
+  <h3 ng-show="box.length === 0">No messages</h3>
+  <div ng-repeat="message in box" ng-click="view(message)" ng-style="message.seen?{'background-color':'#ddd'}:{'background-color':'#fff'}" style="display:flex; flex-column-rule: 1px solid black; border:1px solid black; font-size: 1.5em;">
+    <div style="flex-grow:3" ng-show="!message.senderName">{{message.senderEmail}}</div>
+    <div style="flex-grow:3" ng-show="!!message.senderName">{{message.senderName}}</div>
+    <div style="flex-grow:10">
+      <span style="font-weight:bold">{{message.subject}} - </span>
+      <span>{{message.body | limitTo:50}}</span>
+    </div>
+    <div style="flex-grow:2">{{message.date | date:'shortDate'}}</div>
+  </div>
+</div>

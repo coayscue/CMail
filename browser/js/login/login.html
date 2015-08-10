@@ -1,0 +1,47 @@
+<form id="login-form" name="loginForm" ng-submit="loginForm.$valid && sendLogin(login)">
+<h1 style="margin-bottom: 20px">Log In</h1>
+    <alert type="danger" ng-show="error">
+        {{ error }}
+    </alert>
+
+    <div class="form-group">
+        <label for="email">Username</label>
+        <input type="text" ng-model="login.email" class="form-control" id="email" placeholder="Enter email">
+        <span style="font-size:1.25em">@christianayscue.com</span>
+
+    </div>
+    <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" ng-model="login.password" class="form-control" id="login-password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<!-- divider -->
+<div style="margin:50px 0; border-bottom:1px solid black;"></div>
+
+<!-- SignUp -->
+
+    <form name="newUserForm" ng-submit="submitForm(newuser)" style="width: 60%; margin: 0 auto;">
+    <h1 style="margin-bottom: 20px">Sign Up!</h1>
+        <div class="form-group">
+            <label for="email">Username</label>
+            <input type="text" id="email" name="email" ng-model="newuser.email" required ng-maxlength="40" class="form-control" placeholder="Username">
+            <span style="font-size:1.25em">@christianayscue.com</span>
+            <span class="error" ng-show="!!newUserForm.email.$error.maxlength">
+          This field is too long!</span>
+        </div>
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" ng-model="newuser.name" required ng-minlength="5" class="form-control" placeholder="Full name">
+            <span class="error" ng-show="!!newUserForm.name.$error.minlength">
+          This field is too short!</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" ng-model="newuser.password" required ng-minlength="6" class="form-control" placeholder="Password">
+            <span class="error" ng-show="!!newUserForm.password.$error.maxlength">
+          This field must be at least 6 characters!</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>

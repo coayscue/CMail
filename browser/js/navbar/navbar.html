@@ -1,0 +1,9 @@
+<nav class="navbar navbar-static-top">
+  <h1 style="display:inline-block; margin-left:20px">CMail</h1>
+  <input type="text"style="margin-left: 80px; width:300px; font-size:1.5em; border: 1px solid grey" placeholder="Search" ng-model="messageFilter" ng-change=filter() ></input>
+  <button ng-show="!user" ui-sref="login" class="btn login-button">Login</button>
+  <div ng-show="user" style="float:right; margin-top:15px;">
+    <span style="margin-right:30px;">Hello, {{user.email}}</span>  
+    <a ng-click="logout()" style="margin-right:30px">Logout</a>
+  </div>
+</nav>
