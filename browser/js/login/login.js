@@ -47,6 +47,4 @@ app.controller('LoginCtrl', function($scope, AuthService, $state) {
                 $scope.error = 'Could not sign up. Try again.'
             })
     }
-
-
 });
